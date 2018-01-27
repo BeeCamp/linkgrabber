@@ -14,12 +14,6 @@
 
 //add verticall scroll bar because nate wants it. 
 
-
-
-
-
-
-
 $(function () {
 
     var container;
