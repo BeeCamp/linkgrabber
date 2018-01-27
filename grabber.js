@@ -8,7 +8,7 @@
 
 //todo:
 
-//add clear button
+//add verticall scroll bar because nate wants it. 
 
 
 
@@ -24,7 +24,6 @@ $(function () {
     } else {
         container = psapproot;
     }
-
 
     container.prepend(holder);
 
