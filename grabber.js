@@ -1,3 +1,7 @@
+//Brandon Campbell
+//January 2018
+
+
 //Recent Fixes:
 //hotkey is now alt+rmb
 //brought back the context menu
@@ -9,6 +13,10 @@
 //todo:
 
 //add verticall scroll bar because nate wants it. 
+
+
+
+
 
 
 
