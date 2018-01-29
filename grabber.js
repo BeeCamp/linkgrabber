@@ -8,11 +8,12 @@
 //It will now search several layers to find the link. This fixes the problem with the text on the page is actually nested several layers inside of the A. 
 //Fixed issue of not showing up in some areas of pluralsight. 
 //Added persistence so list of links remains when navigating to other pages. 
-//Added "clear" button. 
+//Added "clear" button.
+//added alt+c to copy. 
+//added alt+x to clear. 
 
 //todo:
 
-//add verticall scroll bar because nate wants it. 
 
 $(function () {
 
@@ -47,13 +48,35 @@ $(function () {
     button.innerText = "Copy";
     $("#holder").prepend(button);
 
-    button.addEventListener('click', function (e) {
+    function copy() {
         var copyText = document.getElementById('links');
         copyText.select();
         document.execCommand('Copy');
         //copyText.value = '';
 
+    }
+
+    function clear() {
+        var copyText = document.getElementById('links');
+        copyText.value = '';
+        chrome.storage.sync.set({
+            'links': ''
+        });
+    }
+
+    button.addEventListener('click', copy);
+
+    window.addEventListener('keydown', function (e) {
+        if (e.keyCode == 67 && e.altKey) {
+            copy();
+        }
+        if (e.keyCode == 88 && e.altKey) {
+            clear();
+        }
     });
+
+
+
 
     //clear button/////////////////////////////////////////////////
     var cbutton = document.createElement("button");
@@ -61,14 +84,7 @@ $(function () {
     cbutton.innerText = "Clear";
     $("#holder").prepend(cbutton);
 
-    cbutton.addEventListener('click', function (e) {
-        var copyText = document.getElementById('links');
-        copyText.value = '';
-        chrome.storage.sync.set({
-            'links': ''
-        });
-
-    });
+    cbutton.addEventListener('click', clear);
 
 
     document.addEventListener('contextmenu', function (e) {
