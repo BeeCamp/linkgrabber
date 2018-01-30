@@ -7,6 +7,7 @@ To use, save all files in a folder and add that folder to chrome as an unpacked 
 It will add a textarea and two buttons to the pages of app.pluralsight.com. Use alt+rmb to click on links to add them to the list. 
 Click "copy" to copy them to the clipboard, then paste straight into google sheets. 
 Click "clear" to empty the list. 
+
 You can use alt+c to copy, and alt+x to clear. 
 
 
